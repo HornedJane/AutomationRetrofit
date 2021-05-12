@@ -62,8 +62,8 @@ public class ApiTests {
 
     @Test
     public void positiveDeleteTest() throws IOException {
-        Pet retrofitPet = petStore.createPet(testPet).execute().body();
-        Integer response = petStore.deletePet(retrofitPet.getId()).execute().code();
+        petStore.createPet(testPet).execute();
+        Integer response = petStore.deletePet(testPet.getId()).execute().code();
         Assertions.assertEquals(200, response);
     }
 
